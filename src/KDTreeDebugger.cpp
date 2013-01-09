@@ -24,7 +24,7 @@ void KDTreeDebugger::renderNode(KDTree::Node* pNode, const BBox& rBBox, size_t n
             glColor3f(1.0f,0.0f,0.0f);
             glEnableClientState(GL_VERTEX_ARRAY);
             glVertexPointer(3, GL_FLOAT, 0, pNode->m_aPoints.data());
-            glDrawArrays(GL_POINTS, 0, pNode->m_aPoints.size());
+            glDrawArrays(GL_POINTS, 0, static_cast<GLsizei>(pNode->m_aPoints.size()));
             glDisableClientState(GL_VERTEX_ARRAY); 
         }
         else

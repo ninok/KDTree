@@ -344,19 +344,18 @@ int main(int argc, char *argv[])
     std::vector<GLushort>   aElements;
 
     //load_obj("data\\bunny.obj", *s_pPoints, aNormals, aElements);
-    initPoints(500, *s_pPoints);
+    initPoints(50000, *s_pPoints);
     
     s_pTree = new KDTree(*s_pPoints, 10);
 
-    std::vector<glm::vec3> aPoints;
-    for (size_t i=0; i<s_pPoints->size(); i++)
-    {
-        for (size_t i=0; i<1000; i++)
-        {
-            s_pTree->findKNearest(10, glm::linearRand (glm::vec3(0), glm::vec3(1)), aPoints);
-        }
-
-    }
+//    std::vector<glm::vec3> aPoints;
+//    for (size_t i=0; i<s_pPoints->size(); i++)
+//    {
+//        for (size_t i=0; i<1000; i++)
+//        {
+//            s_pTree->findKNearest(10, glm::linearRand (glm::vec3(0), glm::vec3(1)), aPoints);
+//        }
+//    }
 
 
     glutInitWindowSize(1024,768);
