@@ -2,7 +2,6 @@ solution "KDTree"
 	configurations	{ "Debug", "Release" }
     platforms { "x32", "x64", "Universal" }
 
-
 project "KDTree"
 	kind		"ConsoleApp"
 	language	"C++"
