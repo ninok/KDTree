@@ -1,6 +1,10 @@
 solution "KDTree"
 	configurations	{ "Debug", "Release" }
-    platforms { "x32", "x64", "Universal" }
+		if os.get() == "windows" then
+			platforms { "x32", "x64"}
+		elseif os.get() == "macosx" then
+			platforms { "Universal" }
+		end
 
 project "KDTree"
 	kind		"ConsoleApp"
