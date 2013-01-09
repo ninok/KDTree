@@ -6,14 +6,136 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3FF48E55169D7FA700767CCF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48E54169D7FA700767CCF /* main.cpp */; };
+		3FF48E57169D7FA700767CCF /* KDTreeGLUT.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FF48E56169D7FA700767CCF /* KDTreeGLUT.1 */; };
+		3FF48E62169D7FF200767CCF /* BBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48E5B169D7FF200767CCF /* BBox.cpp */; };
+		3FF48E63169D7FF200767CCF /* KDTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48E5D169D7FF200767CCF /* KDTree.cpp */; };
+		3FF48E64169D7FF200767CCF /* KDTreeDebugger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48E5F169D7FF200767CCF /* KDTreeDebugger.cpp */; };
+		3FF48E65169D80B600767CCF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF48E49169D7EAF00767CCF /* OpenGL.framework */; };
+		3FF48E66169D80B900767CCF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF48E4B169D7EB600767CCF /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3FF48E4F169D7FA700767CCF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				3FF48E57169D7FA700767CCF /* KDTreeGLUT.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3FF48E21169D77DA00767CCF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3FF48E24169D77DA00767CCF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3FF48E25169D77DA00767CCF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3FF48E26169D77DA00767CCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FF48E49169D7EAF00767CCF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = ../../../../System/Library/Frameworks/OpenGL.framework; sourceTree = "<group>"; };
+		3FF48E4B169D7EB600767CCF /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../../System/Library/Frameworks/GLUT.framework; sourceTree = "<group>"; };
+		3FF48E51169D7FA700767CCF /* KDTreeGLUT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KDTreeGLUT; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF48E54169D7FA700767CCF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3FF48E56169D7FA700767CCF /* KDTreeGLUT.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = KDTreeGLUT.1; sourceTree = "<group>"; };
+		3FF48E5B169D7FF200767CCF /* BBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BBox.cpp; sourceTree = "<group>"; };
+		3FF48E5C169D7FF200767CCF /* BBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBox.h; sourceTree = "<group>"; };
+		3FF48E5D169D7FF200767CCF /* KDTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KDTree.cpp; sourceTree = "<group>"; };
+		3FF48E5E169D7FF200767CCF /* KDTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDTree.h; sourceTree = "<group>"; };
+		3FF48E5F169D7FF200767CCF /* KDTreeDebugger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KDTreeDebugger.cpp; sourceTree = "<group>"; };
+		3FF48E60169D7FF200767CCF /* KDTreeDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDTreeDebugger.h; sourceTree = "<group>"; };
+		3FF48E61169D7FF200767CCF /* PCH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCH.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FF48E4E169D7FA700767CCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF48E65169D80B600767CCF /* OpenGL.framework in Frameworks */,
+				3FF48E66169D80B900767CCF /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		3FF48E10169D77CC00767CCF = {
 			isa = PBXGroup;
 			children = (
+				3FF48E53169D7FA700767CCF /* KDTreeGLUT */,
+				3FF48E20169D77DA00767CCF /* Frameworks */,
+				3FF48E1E169D77DA00767CCF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		3FF48E1E169D77DA00767CCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FF48E51169D7FA700767CCF /* KDTreeGLUT */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FF48E20169D77DA00767CCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF48E4B169D7EB600767CCF /* GLUT.framework */,
+				3FF48E49169D7EAF00767CCF /* OpenGL.framework */,
+				3FF48E21169D77DA00767CCF /* Cocoa.framework */,
+				3FF48E23169D77DA00767CCF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FF48E23169D77DA00767CCF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF48E24169D77DA00767CCF /* AppKit.framework */,
+				3FF48E25169D77DA00767CCF /* CoreData.framework */,
+				3FF48E26169D77DA00767CCF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3FF48E53169D7FA700767CCF /* KDTreeGLUT */ = {
+			isa = PBXGroup;
+			children = (
+				3FF48E5B169D7FF200767CCF /* BBox.cpp */,
+				3FF48E5C169D7FF200767CCF /* BBox.h */,
+				3FF48E5D169D7FF200767CCF /* KDTree.cpp */,
+				3FF48E5E169D7FF200767CCF /* KDTree.h */,
+				3FF48E5F169D7FF200767CCF /* KDTreeDebugger.cpp */,
+				3FF48E60169D7FF200767CCF /* KDTreeDebugger.h */,
+				3FF48E61169D7FF200767CCF /* PCH.h */,
+				3FF48E54169D7FA700767CCF /* main.cpp */,
+				3FF48E56169D7FA700767CCF /* KDTreeGLUT.1 */,
+			);
+			path = KDTreeGLUT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FF48E50169D7FA700767CCF /* KDTreeGLUT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FF48E58169D7FA700767CCF /* Build configuration list for PBXNativeTarget "KDTreeGLUT" */;
+			buildPhases = (
+				3FF48E4D169D7FA700767CCF /* Sources */,
+				3FF48E4E169D7FA700767CCF /* Frameworks */,
+				3FF48E4F169D7FA700767CCF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KDTreeGLUT;
+			productName = KDTreeGLUT;
+			productReference = 3FF48E51169D7FA700767CCF /* KDTreeGLUT */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3FF48E12169D77CC00767CCF /* Project object */ = {
@@ -29,23 +151,100 @@
 				en,
 			);
 			mainGroup = 3FF48E10169D77CC00767CCF;
+			productRefGroup = 3FF48E1E169D77DA00767CCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3FF48E50169D7FA700767CCF /* KDTreeGLUT */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FF48E4D169D7FA700767CCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF48E55169D7FA700767CCF /* main.cpp in Sources */,
+				3FF48E62169D7FF200767CCF /* BBox.cpp in Sources */,
+				3FF48E63169D7FF200767CCF /* KDTree.cpp in Sources */,
+				3FF48E64169D7FF200767CCF /* KDTreeDebugger.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		3FF48E17169D77CC00767CCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				HEADER_SEARCH_PATHS = (
+					../boost,
+					../glm,
+				);
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		3FF48E18169D77CC00767CCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				HEADER_SEARCH_PATHS = (
+					../boost,
+					../glm,
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3FF48E59169D7FA700767CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3FF48E5A169D7FA700767CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -60,6 +259,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3FF48E58169D7FA700767CCF /* Build configuration list for PBXNativeTarget "KDTreeGLUT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FF48E59169D7FA700767CCF /* Debug */,
+				3FF48E5A169D7FA700767CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -125,7 +125,7 @@ KDTree::Node* KDTree::findNode(const glm::vec3& rPoint, Node* pNode) const
     }
     else
     {
-        throw std::exception("KDTree is corrupt");
+        throw std::exception();//"KDTree is corrupt");
     }
 
 }

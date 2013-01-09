@@ -61,7 +61,7 @@
  * and how it is drawn.  No object uses all of these
  * variables.
  */
-static glm::vec3 v3CameraPosition(0.0f, 0.0f, 10.0f);
+static glm::vec3 v3CameraPosition(0.0f, 0.0f, 100.0f);
 static glm::vec3 v3CameraLookAt(0.0f, 0.0f, 0.0f);
 static GLboolean s_bShowInfo = true;
 static bool s_bRenderPoints = true;
@@ -105,12 +105,13 @@ static void shapesPrintf (int row, int col, const char *fmt, ...)
 
         glOrtho(0,viewport[2],0,viewport[3],-1,1);
 
-        glRasterPos2i
-        (
-              glutBitmapWidth(font, ' ') * col,
-            - glutBitmapHeight(font) * (row+2) + viewport[3]
-        );
-        glutBitmapString (font, (unsigned char*)buf);
+        //TODO: Port to OSX
+//        glRasterPos2i
+//        (
+//              glutBitmapWidth(font, ' ') * col,
+//            - glutBitmapHeight(font) * (row+2) + viewport[3]
+//        );
+//        glutBitmapString (font, (unsigned char*)buf);
 
     glPopMatrix();
     glMatrixMode(GL_MODELVIEW);
@@ -126,7 +127,7 @@ resize(int width, int height)
 
     const float fAspectRatio = (float) width / (float) height;
 
-    glm::mat4 aProjection = glm::perspective(45.0f, fAspectRatio, 0.1f, 100.0f);
+    glm::mat4 aProjection = glm::perspective(45.0f, fAspectRatio, 0.1f, 1000.0f);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glLoadMatrixf(&aProjection[0][0]);
@@ -165,13 +166,13 @@ static void display(void)
     
     glColor3d(0.1,0.1,0.1);
 
-    if( s_bShowInfo )
-    {
-        shapesPrintf (1, 3, "KD-Tree depth: %u", s_pTree->getDepth());
-        shapesPrintf (2, 3, "Curent KD-Tree debug depth: %u", s_nDebugTreeLevel);
-        shapesPrintf (3, 3, "Camera Position: (%f, %f, %f)", v3CameraPosition.x, v3CameraPosition.y, v3CameraPosition.z);
-        shapesPrintf (4, 3, "Camera LookAt: (%f, %f, %f)", v3CameraLookAt.x, v3CameraLookAt.y, v3CameraLookAt.z);
-    }
+//    if( s_bShowInfo )
+//    {
+//        shapesPrintf (1, 3, "KD-Tree depth: %u", s_pTree->getDepth());
+//        shapesPrintf (2, 3, "Curent KD-Tree debug depth: %u", s_nDebugTreeLevel);
+//        shapesPrintf (3, 3, "Camera Position: (%f, %f, %f)", v3CameraPosition.x, v3CameraPosition.y, v3CameraPosition.z);
+//        shapesPrintf (4, 3, "Camera LookAt: (%f, %f, %f)", v3CameraLookAt.x, v3CameraLookAt.y, v3CameraLookAt.z);
+//    }
 
     glutSwapBuffers();
 }
@@ -185,7 +186,7 @@ key(unsigned char key, int x, int y)
     case 27 :
     case 'Q':
     case 'q':
-        glutLeaveMainLoop ();
+        exit(0);
         break;
 
     case 'P':
@@ -232,12 +233,12 @@ static void special (int key, int x, int y)
     {
     case GLUT_KEY_PAGE_UP:
         // rotate the camera position around the X-Axis
-        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), 10.0f, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz;
+        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), 10.0f, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz();
         glutPostRedisplay();
         break;
     case GLUT_KEY_PAGE_DOWN:
         // rotate the camera position around the X-Axis
-        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), -10.0f, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz;
+        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), -10.0f, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz();
         glutPostRedisplay();
         break;
 
@@ -253,12 +254,12 @@ static void special (int key, int x, int y)
 
     case GLUT_KEY_RIGHT:
         // rotate the camera position around the Y-Axis
-        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), 10.0f, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz;
+        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), 10.0f, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz();
         glutPostRedisplay();
         break;
     case GLUT_KEY_LEFT:
         // rotate the camera position around the Y-Axis
-        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), -10.0f, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz;
+        v3CameraPosition = (glm::rotate(glm::mat4(1.0f), -10.0f, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::vec4(v3CameraPosition, 1.0f)).xyz();
         glutPostRedisplay();
         break;
 
@@ -279,7 +280,7 @@ static void initPoints(size_t nCount, std::vector<glm::vec3>& rPoints)
 
     for (size_t i=0; i<nCount; i++)
     {
-        rPoints.at(i) = glm::linearRand (glm::vec3(0), glm::vec3(1));
+        rPoints.at(i) = glm::linearRand(glm::vec3(-1.0f), glm::vec3(1.0f));
     }
 }
 
@@ -342,8 +343,8 @@ int main(int argc, char *argv[])
     std::vector<glm::vec3>  aNormals;
     std::vector<GLushort>   aElements;
 
-    load_obj("data\\bunny.obj", *s_pPoints, aNormals, aElements);
-    //initPoints(500000, *s_pPoints);
+    //load_obj("data\\bunny.obj", *s_pPoints, aNormals, aElements);
+    initPoints(500, *s_pPoints);
     
     s_pTree = new KDTree(*s_pPoints, 10);
 
@@ -370,8 +371,6 @@ int main(int argc, char *argv[])
     glutKeyboardFunc(key);
     glutSpecialFunc(special);
     glutIdleFunc(idle);
-
-    glutSetOption ( GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION ) ;
 
     glClearColor(1,1,1,1);
     
