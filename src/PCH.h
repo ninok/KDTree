@@ -24,7 +24,7 @@
 #ifdef __APPLE__
 #include <GLUT/GLUT.h>
 #else
-#include <GL/freeglut.h>
+#include <GL/glut.h>
 #endif
 
 enum TAxis

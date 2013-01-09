@@ -12,12 +12,25 @@ files
 	"src/*.cpp"
 }
 
-links{
-	"OpenGL.framework",
-	"GLUT.framework"
-}
+configuration "windows"
+    includedirs{
+        "$(BOOSTDIR)",
+        "$(GLMDIR)",
+        "$(GLUTDIR)/include"
+    }
+    libdirs{
+        "$(GLUTDIR)/lib/x86"
+    }
+    
+configuration "macosx"
+    includedirs{
+        "../boost",
+        "../glm"
+    }
+    links{
+        "OpenGL.framework",
+        "GLUT.framework"
+    }
 
-includedirs{
-	"../boost",
-	"../glm"
-}
+
+
