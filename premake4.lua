@@ -12,7 +12,11 @@ files
 	"src/*.cpp"
 }
 
+pchheader "PCH.h"
+pchsource "src/PCH.cpp"
+
 configuration "windows"
+    buildoptions { "-Zm256" }
     includedirs{
         "$(BOOSTDIR)",
         "$(GLMDIR)",
