@@ -1,5 +1,6 @@
 solution "KDTree"
 	configurations	{ "Debug", "Release" }
+    platforms { "x32", "x64", "Universal" }
 
 
 project "KDTree"
@@ -12,6 +13,11 @@ files
 	"src/*.cpp"
 }
 
+defines
+{
+    "FREEGLUT_STATIC"
+}
+
 pchheader "PCH.h"
 pchsource "src/PCH.cpp"
 
@@ -22,8 +28,15 @@ configuration "windows"
         "$(GLMDIR)",
         "$(GLUTDIR)/include"
     }
+
+configuration {"windows","x32"}
     libdirs{
         "$(GLUTDIR)/lib/x86"
+    }
+
+configuration {"windows","x64"}
+    libdirs{
+        "$(GLUTDIR)/lib/x64"
     }
     
 configuration "macosx"
