@@ -17,7 +17,7 @@ defines
     "FREEGLUT_STATIC"
 }
 
-pchheader "PCH.h"
+pchheader "src/PCH.h"
 pchsource "src/PCH.cpp"
 
 configuration "windows"
@@ -37,7 +37,7 @@ configuration {"windows","x64"}
     libdirs{
         "$(GLUTDIR)/lib/x64"
     }
-    
+
 configuration "macosx"
     includedirs{
         "../boost",

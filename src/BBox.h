@@ -3,6 +3,11 @@
 #include <vector>
 #include <glm/glm.hpp>
 
+enum TAxis
+{
+    AXIS_X, AXIS_Y, AXIS_Z
+};
+
 class BBox
 {
 

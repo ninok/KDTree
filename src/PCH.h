@@ -1,5 +1,4 @@
 
-
 // STL
 
 #include <vector>
@@ -26,8 +25,3 @@
 #else
 #include <GL/glut.h>
 #endif
-
-enum TAxis
-{
-    AXIS_X, AXIS_Y, AXIS_Z
-};
