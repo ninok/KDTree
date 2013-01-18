@@ -86,30 +86,43 @@ glm::vec3 BBox::calcBBoxMax(const std::vector<glm::vec3>& rPoints)
 
 void BBox::render() const
 {
+    //       7--------6
+    //      /|        /
+    //     / |       /|
+    //    /  |      / |
+    //    3--------2  |
+    //    |  4-----|--5
+    //    | /      |  /
+    //    |/       | /
+    //    |        |/
+    //    0--------1
     
-    glBegin(GL_QUADS);
-
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Max.y, m_v3Min.z);
-    glVertex3f(m_v3Min.x, m_v3Max.y, m_v3Min.z);
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Max.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Max.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Max.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Max.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Min.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Max.x, m_v3Min.y, m_v3Max.z);
-    glVertex3f(m_v3Max.x, m_v3Max.y, m_v3Max.z);
-    glVertex3f(m_v3Min.x, m_v3Max.y, m_v3Max.z);
-    glEnd();
+    using glm::vec3;
+    vec3 pVertices[8] =
+    {
+        vec3(m_v3Min.x, m_v3Min.y, m_v3Min.z),
+        vec3(m_v3Max.x, m_v3Min.y, m_v3Min.z),
+        vec3(m_v3Max.x, m_v3Max.y, m_v3Min.z),
+        vec3(m_v3Min.x, m_v3Max.y, m_v3Min.z),
+        vec3(m_v3Min.x, m_v3Min.y, m_v3Max.z),
+        vec3(m_v3Max.x, m_v3Min.y, m_v3Max.z),
+        vec3(m_v3Max.x, m_v3Max.y, m_v3Max.z),
+        vec3(m_v3Min.x, m_v3Max.y, m_v3Max.z),
+    };
+    
+    GLushort pLineIndices[24] =
+    {
+        0,1, 1,2, 2,3, 3,0, //front
+        0,4, 1,5, 2,6, 3,7, //front to back
+        4,5, 5,6, 6,7, 7,4, //back
+    };
+    
+    
+    glColor3f(1.0f,0.0f,0.0f);
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, pVertices);
+    glDrawElements(GL_LINES, 24, GL_UNSIGNED_SHORT, pLineIndices);
+    glDisableClientState(GL_VERTEX_ARRAY);
 }
 
 bool BBox::containsPoint(const glm::vec3& rPoint)
